@@ -1,0 +1,36 @@
+body{
+    align-items: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:coral;
+    justify-content: center;
+    min-height: 150vh;
+    margin: 0;
+    padding: 3px;
+    justify-self: center;
+}
+form{
+    background-color:white;
+    padding:70px;
+    width:fit-content;
+
+
+    border-radius: 15px;
+}
+button{
+    width: 20px;
+
+    background-color:lightgreen;
+    width:max-content;
+    padding: 2px;
+}
+label{
+    margin-top: ;
+    color: ;
+    font-weight: 400;
+}
+fieldset{
+    width: fit-content;
+}
+input{
+    align-items: ;
+}
