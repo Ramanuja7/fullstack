@@ -1,0 +1,10 @@
+Document.title="dom";
+document.body.style.backgroundColor="orange";
+document.getElementById("header").innerHTML="hello world";
+document.getElementsByTagName("h2")[0].style.color="blue";
+document.getElementById("para").innerHTML="hi";
+document.getElementById("para").style.fontSize="25px";
+document.getElementById("para").style.color="green";
+document.body.style.backgroundColor="orange";
+document.getElementsByClassName("ds")[0].style.color='black';
+document.getElementsByClassName("ds")[1].style.color="grey";
