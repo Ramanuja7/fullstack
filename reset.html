@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reset</title>
+</head>
+<body>
+    <h1>reset example</h1>
+    <form id="myform">
+        <input type="text"  id="h" placeholder="type here">
+        <button type="reset">reset</button>
+        <script>
+            let fo=document.getElementById("myform");
+            let ins=document.getElementById("h");
+            fo.addEventListener("reset",function(){
+                ins.value="";
+            });
+            
+        </script>
+
+    </form>
+    
+</body>
+</html>
