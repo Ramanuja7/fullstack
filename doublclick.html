@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doubl click</title>
+</head>
+<body>
+    <button>hello </button>
+    <div id="a" style="width:100px; height:100px; background-color:orange"></div>
+    <script>
+        let ab =document.getElementById('a');
+        ab.addEventListener("dblclick",function(){
+            ab.innerHTML("clicked");
+            ab.style.backgroundColor=ab.style.backgroundColor==="lightblue"?"lightcoral":"lightblue";
+        });
+    </script>
+    
+</body>
+</html>

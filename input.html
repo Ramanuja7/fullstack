@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taking input</title>
+</head>
+<body>
+    <input type="text" id="texti" placeholder="type here">
+    <p id="input"></p>
+    <script>
+        let a=document.getElementById("texti");
+        let di=document.getElementById("input");
+        a.addEventListener("input",function(){
+            di.textContent=a.value;
+        });
+    </script>
+
+    
+</body>
+</html>
