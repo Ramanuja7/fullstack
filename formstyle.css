@@ -1,0 +1,46 @@
+form {
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+  background-color: bisque;
+}
+
+label {
+  margin-top: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+margin-top: 10;
+  padding: 8px;
+  width: 100%;
+  background-color:greenyellow;
+  color:black;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+img {
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+}
+h1 {
+    text-align: center;
+}
+body{
+    background-color:grey;
+    background-image:url('img2.jpg');
+    background-position:left;
+    width:100%;
+    align-items: stretch;
+}
