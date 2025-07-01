@@ -31,7 +31,7 @@ const hello=()=>{
     console.log("hello world");
 }
 setTimeout(hello,5000);*/
-for(let i=0;i<5;i++){
+/*for(let i=0;i<5;i++){
     let str="";
     for(let j=0;j<5;j++){
         str+=j;
@@ -45,4 +45,94 @@ function getData(dataid){
 }
 getData(1);
 getData(2);
-getData(3);
+getData(3);*/
+//call back hell
+function getData(dataid,getnextdata){
+    setTimeout(()=>{
+        console.log("fetching data for ",dataid);
+        if(getnextdata){
+            getnextdata();
+        }
+    },5000);
+}
+getData(1,()=>{
+    console.log("getting data 2..");
+    getData(2,()=>{
+        console.log("getting data 3..");
+        getData(3);
+    });
+});
+//to avoid call back hell we use promises   
+//prommise is an object thta respresnts the eventual completion or failure of an asynchrous operation and its resuling value.it allows you to write asynchrouus code in a more mangeable way,avoiding call back hell.
+//promise syntax
+//const myPromie=new Promise
+//((resolve,reject)=>{..})
+//resolve is called when the asynchronous operation is successful 
+//reject is called when the asynchronous operation fails
+/*const myPromise=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        const success=false;
+        if(success){
+            resolve("data fetched successfully");
+        }
+        else{
+            reject("error fetching data");
+        }
+
+    });
+});
+myPromise
+    .then((data)=>{
+    console.log("promise resolved wih data:",data);
+})
+    .catch((error)=>{
+        console.error("Promise rejected with error",error);
+    });
+//using the promise
+//the then()mehtod is called when the promise is resolved successfullu
+//the catch()method is called when the promise is rejected with an error
+//the finally()method is called when te promise is settled,regardless of whetherit was resolved or rejected*/
+const myPromise= new Promise((resolve,reject)=>
+{
+    console.log("i am a promise");
+    if(1<0){
+        resolve(143);
+
+    }
+    reject("something went wrong");
+});
+myPromise
+.catch((data)=>{
+    console.log("something wrong");
+
+})
+function getData(dataid){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("fetching data for id",dataid);
+            resolve("success");
+        },2990);
+
+    })
+}
+let result=getData(1024);
+result
+.then(result=>{
+    console.log("first fetch",result);
+    return getData(1025);
+})
+.then(result=>{
+    console.log("second fetch",result);
+    return getData(1026);
+})
+.then(result=>{
+    console.log("first fetch",result);
+    return getData(1027);
+})
+.then(result=>{
+    console.log("first fetch",result);
+    return getData(1028);
+})
+.catch(result=>{
+    console.log("rejected");
+})
