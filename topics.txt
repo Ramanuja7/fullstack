@@ -7,6 +7,7 @@ event listners :key and mouse
 internal and external javascript
 builiding forms using javascript
 building website using javascript
+dom manipulation
 asynchronous methods 
 call back functions
 
