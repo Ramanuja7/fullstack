@@ -1,0 +1,12 @@
+topics covered in javascript
+syntax
+variables
+datatypes operators
+loops and control statements
+event listners :key and mouse
+internal and external javascript
+builiding forms using javascript
+building website using javascript
+asynchronous methods 
+call back functions
+

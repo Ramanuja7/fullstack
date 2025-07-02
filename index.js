@@ -154,7 +154,7 @@ result
 });*/
 //promise chaining
 //promise chaining is used to enusre one task starts after the previous complete
-function asyncFunc1(){
+/*function asyncFunc1(){
     return new Promise((reject,resolve)=>{
         setTimeout(()=>{
             console.log("data2");
@@ -180,4 +180,39 @@ p.then((data)=>{
     p1.then((data)=>{
         console.log("data fetched",data);
     });
-});
+});*/
+//async and wait
+//async is a way to write asynchronous code that looks making it easier to read and maintain
+//it is built on top of promises and allows you to write asynchronous code in a more linear fashion
+function getData(id){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("fetching data for id:",id);
+            resolve(id);
+        },2000);
+    }
+    );
+}
+async function fetchData(){
+    try{
+        const data1=await getData(101);
+        console.log("first fetch:",data1);
+        const data2=await getData(102);
+        console.log("second fetch:",data2);
+        const data3=await getData(103);
+        console.log("third ",data3);
+
+    }catch (error){
+        console.error("error occured",error);
+    }
+}
+fetchData();
+async function getnextData(){
+    console.log("getting data 1...");
+    await getData(1);
+    console.log("getting data 2..");
+    await getData(2);
+    console.log("getting data 3..");
+    await getData(3);
+}
+getnextData();
