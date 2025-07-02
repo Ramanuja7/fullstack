@@ -92,7 +92,7 @@ myPromise
 //the then()mehtod is called when the promise is resolved successfullu
 //the catch()method is called when the promise is rejected with an error
 //the finally()method is called when te promise is settled,regardless of whetherit was resolved or rejected*/
-const myPromise= new Promise((resolve,reject)=>
+/*const myPromise= new Promise((resolve,reject)=>
 {
     console.log("i am a promise");
     if(1<0){
@@ -135,4 +135,49 @@ result
 })
 .catch(result=>{
     console.log("rejected");
-})
+})*/
+/*const getpromise=()=>{
+    return new Promise((resolve,reject)=>{
+    console.log("i am a promise");
+    resolve("resolved");
+    reject("something went wrong");});
+}
+let result=getpromise();
+result
+.then(data=>{
+    console.log("data");
+});
+.catch((error)=>{
+        console.error("Promise rejected with error",error);
+    });
+
+});*/
+//promise chaining
+//promise chaining is used to enusre one task starts after the previous complete
+function asyncFunc1(){
+    return new Promise((reject,resolve)=>{
+        setTimeout(()=>{
+            console.log("data2");
+            resolve("success");
+
+        },2000)
+    }
+    );
+}
+function asyncFun2(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("data2");
+            resolve("success");
+        },4000);
+    });
+}
+console.log("fetching data 1..");
+let p=asyncFunc1();
+p.then((data)=>{
+    console.log("data fetched",data);
+    let p1=asyncFun2();
+    p1.then((data)=>{
+        console.log("data fetched",data);
+    });
+});
